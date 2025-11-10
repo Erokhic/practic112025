@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+
+}
+
+body {
+    background-color: #ffffff;
+}
+
+
+h1 {
+    font-size: 48px;
+    text-align: center;
+color: darksalmon;
+}
+.name{
+    margin-top: 50px;
+}
+input {
+    padding: 10px;
+    width: 500px;
+    font-size: 17px;
+    border: 1px solid #ffbbbb;
+    margin: 10px;
+}
+.login{
+margin-top: 50px;
+}
+button {
+    color: hotpink;
+    margin: 40px 100px 40px 100px;
+    padding: 10px 60px 10px 60px;
+    text-align: center;
+    width: 300px;
+  align-content: center;
+    border-style: black;
+}
+button:hover{
+    background-color:  darksalmon;
+    border-style: none;
+}
+
+.error{
+color: red;
+}
+
+p{
+    text-align: left;
+}
+
+.info {
+		width: 100%;
+	margin-bottom: 20px;
+	border-collapse: collapse; 
+}
+.info th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+}
+.info td {
+border: 1px solid #dddddd;
+	padding: 5px;
+}
+.info tr td:first-child, .table tr th:first-child {
+	border-left: none;
+}
+
+.info tr td:last-child, .table tr th:last-child {
+	border-right: none;
+}
+.table_students {
+            width: 1140px;
+            margin: 50px auto;
+            
+  }
+

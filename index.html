@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студенты</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <section class="container">
+        <form action="" class="form">
+            <h1>Форма регистрации для студента</h1>
+
+            <input type="text" class="name" placeholder="Введите имя" required>
+            <p class="error" id="p_name"></p>
+
+            <input type="text" class="surname" placeholder="Введите фамилию" required>
+            <p class="error" id="p_surname"></p>
+
+            <input type="text" class="patronymic" placeholder="Введите отчество" required>
+            <p class="error" id="p_patronymic"></p>
+
+            <p class="b_d">День рождения</p>
+            <input type="date" name="b_day" class="b_day" required>
+            <p class="error" id="p_b_day"></p>
+
+            <p class="start_ed"> Начало обучения</p>
+            <input type="date" name="start_education" class="start_education" required>
+            <p class="error" id="p_start_education"></p>
+
+            <input type="text" class="faculty" placeholder="Введите факультет" required>
+            <p class="error" id="p_faculty"></p>
+
+            <button type="submit" class="btn">Отправить</button>
+        </form>
+    </section>
+
+    <div class="table_students">
+        <div class="header">
+            <h2>База студентов</h2>
+        </div>
+         
+        <table class="info">
+            <thead>
+                <tr>
+                    <th data-sort="fullName">ФИО студента</th>
+                    <th data-sort="faculty">Факультет</th>
+                    <th data-sort="birthDate">Дата рождения и возраст</th>
+                    <th data-sort="startYear">Годы обучения</th>
+                </tr>
+            </thead>
+            <tbody id="students-tbody">
+              
+            </tbody>
+        </table> 
+     </div>     
+    <button class="addBtn">Добавить студента</button>
+  
+</body>
+</html>
