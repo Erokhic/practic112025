@@ -18,9 +18,10 @@ let p_start_education = document.getElementById('p_start_education')
 let p_faculty = document.getElementById('p_faculty')
 
 let header = document.querySelector('header')
-let table = document.querySelector('.table_students')
+let div_table = document.querySelector('.table_students')
 let addBtn = document.querySelector('.addBtn')
 let studentsTbody = document.getElementById('students-tbody')
+let table = document.querySelector('.info')
 
 table.style.display = 'none'
 addBtn.style.display = 'none'
@@ -134,7 +135,7 @@ btn.addEventListener('click', (event) => {
         table.style.display = ''
         addBtn.style.display = ''
         renderStudentsTable()
- form.reset()
+        form.reset()
     }
 
 
@@ -145,7 +146,7 @@ btn.addEventListener('click', (event) => {
 
 
 function renderStudentsTable() {
-let tr = document.createElement('tr')
+    let tr = document.createElement('tr')
     let td_fio = document.createElement("td")
     let td_faculty = document.createElement("td")
     let td_b_day = document.createElement("td")
@@ -160,16 +161,14 @@ let tr = document.createElement('tr')
     tr.append(td_b_day)
     td_start_education.textContent = start_education.value
     tr.append(td_start_education)
-    form.reset()
 }
 
 
 addBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    
     table.style.display = 'none'
-form.style.display = ''
-addBtn.style.display = 'none'
+    form.style.display = ''
+    addBtn.style.display = 'none'
 })
 
 
