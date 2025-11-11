@@ -232,7 +232,7 @@ function infoBirthday(b_day) {
     // Проверяем, был ли уже день рождения в этом году
     // const monthDiff = today.getMonth() - birthDate.getMonth();
 
-    return (resualtDate + ' ( ' + age + ' лет)');
+    return (resualtDate + ' (' + age + ' лет)');
 
 }
 
