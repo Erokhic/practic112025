@@ -22,7 +22,11 @@ let div_table = document.querySelector('.table_students')
 let addBtn = document.querySelector('.addBtn')
 let studentsTbody = document.getElementById('students-tbody')
 let table = document.querySelector('.info')
-// let header_table = document.querySelector('.header')
+
+
+let search_div = document.querySelector('.search_div')
+let search = document.querySelector('.search')
+let btn_search = document.querySelector('.btn_search')
 
 div_table.style.display = 'none'
 addBtn.style.display = 'none'
@@ -95,6 +99,14 @@ function isValidStartEducation(start_education) {
 }
 
 
+let student = {
+    name,
+    surname,
+    patronymic,
+    b_day,
+    start_education,
+    faculty
+}
 
 
 btn.addEventListener('click', (event) => {
@@ -152,7 +164,7 @@ btn.addEventListener('click', (event) => {
     }
 
 
-    const student = {
+      student = {
         name: name.value.trim(),
         surname: surname.value.trim(),
         patronymic: patronymic.value.trim(),
@@ -168,7 +180,7 @@ btn.addEventListener('click', (event) => {
     form.style.display = 'none'
     div_table.style.display = ''
     addBtn.style.display = ''
-    renderStudentsTable()
+    renderStudentsTable(student)
 
     form.reset()
 }
@@ -178,23 +190,23 @@ btn.addEventListener('click', (event) => {
 
 
 
-function renderStudentsTable() {
+function renderStudentsTable(student) {
     let tr = document.createElement('tr')
     let td_fio = document.createElement("td")
     let td_faculty = document.createElement("td")
     let td_b_day = document.createElement("td")
     let td_start_education = document.createElement("td")
 
+    td_fio.textContent = student.name + " " + student.surname + " " + student.patronymic
+    td_faculty.textContent = student.faculty
+ 
+    td_b_day.textContent = infoBirthday(student.b_day)
+    td_start_education.textContent = infoEducation(student.start_education)
+
+    tr.append(td_fio, td_faculty, td_b_day, td_start_education)
     table.append(tr)
-    td_fio.textContent = name.value + " " + surname.value + " " + patronymic.value
-    tr.append(td_fio)
-    td_faculty.textContent = faculty.value
-    tr.append(td_faculty)
-    td_b_day.textContent = infoBirthday(b_day)
-    tr.append(td_b_day)
-    td_start_education.textContent = infoEducation(start_education)
-    tr.append(td_start_education)
 }
+
 
 
 addBtn.addEventListener('click', (e) => {
@@ -207,9 +219,9 @@ addBtn.addEventListener('click', (e) => {
 
 
 
-function infoBirthday(b_day) {
+function infoBirthday(birthDateString) {
     const today = new Date()
-    const birth_day = new Date(b_day.value)
+    const birth_day = new Date(birthDateString)
     const age = today.getFullYear() - birth_day.getFullYear()
 
     const day = birth_day.getDate()          // день (1-31)
@@ -238,8 +250,8 @@ function infoBirthday(b_day) {
 
 
 
-function infoEducation(start_education) {
-    const startDate = new Date(start_education.value)
+function infoEducation(startEducationString) {
+    const startDate = new Date(startEducationString)
     const startYear = startDate.getFullYear() //Получаем год начала обучения
     const endYear = startYear + 4
     const todayDate = new Date()
@@ -270,6 +282,37 @@ function infoEducation(start_education) {
 }
 
 
+
+function searchSurname() {
+    const searchValue = search.value.toLowerCase().trim() 
+
+    table.innerHTML = `
+    <tr>
+        <th>ФИО студента</th>
+        <th>Факультет</th>
+        <th>Дата рождения и возраст</th>
+        <th>Годы обучения</th>
+    </tr>
+    `
+
+let flagSeach = false
+
+students.forEach(student =>{
+    if(student.surname.toLowerCase().includes(searchValue)){
+        renderStudentsTable(student)
+        console.log(student);
+        flagSeach = true
+    }
+
+}
+
+)}
+
+
+btn_search.addEventListener('click', (e)=>{
+    e.preventDefault();
+searchSurname()
+})
 
 
 

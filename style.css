@@ -45,7 +45,7 @@ input {
 .login{
 margin-top: 50px;
 }
-button {
+.addBtn , .btn {
     color: hotpink;
     margin: 40px 100px 40px 100px;
     padding: 10px 60px 10px 60px;
@@ -54,7 +54,7 @@ button {
   align-content: center;
     border-style: black;
 }
-button:hover{
+.addBtn:hover , .btn:hover{
     background-color:  darksalmon;
     border-style: none;
 }
@@ -120,4 +120,18 @@ border: 1px solid #dddddd;
    margin-bottom: 50px;
   }
 
+.btn_search{
+    
+    color: hotpink;
+    border-radius: 10px;
+    text-align: center;
+    width: 100px;
+  align-content: center;
+    border-style: black;
+  }
 
+
+.search {
+    width: 200px;
+    border-radius: 10px;
+}
